@@ -1,13 +1,12 @@
-
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import 'modern-normalize';
 import { Global, ThemeProvider } from '@emotion/react';
-import { App } from './components/App';
+import { App } from 'components/App';
 import { GlobalStyles, theme } from 'styles';
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <BrowserRouter basename="/goit-react-hw-05-movies">
             <ThemeProvider theme={theme}>
@@ -15,6 +14,5 @@ ReactDOM.render(
                 <App />
             </ThemeProvider>
         </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
 );
